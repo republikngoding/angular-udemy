@@ -1,0 +1,58 @@
+<div class="card">
+  <p style="color: blue;">all-product works!</p>
+  <div class="card-body">
+
+    <div align="center">
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <input type="text" class="form-control" [(ngModel)]="productName">
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary" *ngIf="!isDisabled" (click)="onAddProduct()"> Add
+            Product</button>
+        </div>
+      </div>
+
+      <app-product (productClicked)="onRemoveProduct(item)" *ngFor="let item of products"
+        [productName]="item"></app-product>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div align="center">
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <input type="text" class="form-control" [(ngModel)]="productHp">
+        </div>
+        <div class="col-auto">
+          <button *ngIf="!isDisabled" class="btn btn-success" (click)="onAddProductHape()"> Add Product HP</button>
+        </div>
+      </div>
+      <app-product *ngFor="let hp of dataHp" [NamaHP]="hp"></app-product>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div align="center">
+      <form (ngSubmit)="onAddProductForm(f)" #f="ngForm">
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <input type="text" class="form-control" ngModel name="productName" [(ngModel)]="productName" required>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-warning"> Add Product Form</button>
+            <button type="reset" class="btn btn-secondary mx-2"> Reset</button>
+          </div>
+          <app-product *ngFor="let item of dataBaju" [productName]="item"
+            (productClicked)="onRemoveProductBaju(item)"></app-product>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- <button (click)="productName = 'Sebuah Pohon'" [disabled]="isDisabled"> Change Name</button> -->
+<!-- {{productName}} -->
+
+
+<!-- <div *ngFor="let item of products">{{item}}</div> -->
