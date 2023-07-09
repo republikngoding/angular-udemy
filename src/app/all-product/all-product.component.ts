@@ -35,7 +35,10 @@ export class AllProductComponent implements OnInit, OnDestroy {
     );
   }
 
-  ngOnDestroy(): void {}
+  ngOnDestroy(): void {
+    this.productBajuSubscription?.unsubscribe();
+    console.log("unsubscribe");
+  }
 
   onAddProduct() {
     this.products.push(this.productName!);

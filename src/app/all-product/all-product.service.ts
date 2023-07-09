@@ -18,4 +18,9 @@ export class AllProductService {
   getProduct() {
     return [...this.dataBajuSrv];
   }
+
+  deleteProduct(productName: string) {
+    this.dataBajuSrv = this.dataBajuSrv.filter((p) => p !== productName);
+    this.productUpdate.next(this.dataBajuSrv);
+  }
 }
