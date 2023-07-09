@@ -1,10 +1,10 @@
-<h3 style="color: red;">
+<!-- <h3 style="color: red;">
   {{ title }}
-</h3>
+</h3> -->
 
 <!-- <app-product></app-product> -->
 <!-- <app-all-product></app-all-product> -->
-<div>
+<!-- <div>
   <a routerLink="/">Home</a>
 </div>
 <div>
@@ -18,7 +18,61 @@
 </div>
 <div>
   <a routerLink="/trainings">Data Training</a>
-</div>
+</div> -->
 
-
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+  <mat-sidenav #sideNav role="navigation">
+    <p>i'am sidenav</p>
+    <mat-nav-list>
+      <mat-list-item> <a routerLink="/all-product">All Product</a> </mat-list-item>
+      <mat-list-item><a routerLink="/login">Login</a></mat-list-item>
+      <mat-list-item><a routerLink="/signup">Sign Up</a></mat-list-item>
+      <mat-list-item><a routerLink="/trainings">Data Training</a></mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div><button mat-icon-button (click)="sideNav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div>
+        <a routerLink="/" class="text-light">LOGO</a>
+      </div>
+      <span class="example-spacer"></span>
+      <div fxFlex fxLayout fxFlexAlign="flex-end" fxHide.xs>
+        <ul fxFlex fxLayout fxLayoutGap="10px" class="navigation-items">
+          <li>
+            <div>
+              <button mat-raised-button>
+                <a routerLink="/all-product">All Product</a>
+              </button>
+            </div>
+          </li>
+          <li>
+            <div>
+              <button mat-raised-button>
+                <a routerLink="/login">Login</a>
+              </button>
+            </div>
+          </li>
+          <li>
+            <div>
+              <button mat-raised-button>
+                <a routerLink="/signup">Sign Up</a>
+              </button>
+            </div>
+          </li>
+          <li>
+            <div>
+              <button mat-raised-button>
+                <a routerLink="/trainings">Data Training</a>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

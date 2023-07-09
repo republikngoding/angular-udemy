@@ -14,7 +14,17 @@
         <mat-error *ngIf="pwInput.hasError('required')">Password Tidak Boleh Kosong</mat-error>
         <mat-error *ngIf="!pwInput.hasError('required')">Password Kurang dari 6 karakter </mat-error>
       </mat-form-field>
-      <button type="submit" mat-raised-button color="primary">Submit</button>
+      <mat-form-field appearance="outline">
+        <mat-label>Your Birthdate</mat-label>
+        <input matInput [matDatepicker]="picker" [max]="maxDate" ngModel name="birthdate" required>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-checkbox labelPosition="before" ngModel name="agree" required color="primary"> Agree to Terms and
+        Conditions</mat-checkbox>
+      <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Submit</button>
     </form>
   </section>
 </div>

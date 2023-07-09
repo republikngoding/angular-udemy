@@ -14,7 +14,8 @@ import { LoginComponent } from "./auth/login/login.component";
 import { NewTrainingComponent } from "./training/new-training/new-training.component";
 import { PastTrainingComponent } from "./training/past-training/past-training.component";
 import { CurrentTrainingComponent } from "./training/current-training/current-training.component";
-import { TrainingsComponent } from './training/trainings/trainings.component';
+import { TrainingsComponent } from "./training/trainings/trainings.component";
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { TrainingsComponent } from './training/trainings/trainings.component';
     FormsModule,
     BrowserAnimationsModule,
     MaterialDesign,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
