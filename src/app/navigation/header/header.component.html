@@ -7,31 +7,30 @@
   <div>
     <a routerLink="/" class="text-light">LOGO</a>
   </div>
-
   <div fxFlex fxLayout fxFlexAlign="flex-end" fxHide.xs>
     <ul fxFlex fxLayout fxLayoutGap="10px" class="navigation-items">
-      <li>
+      <li *ngIf="isAuth">
         <div>
           <button mat-raised-button>
             <a routerLink="/all-product">All Product</a>
           </button>
         </div>
       </li>
-      <li>
+      <li *ngIf="!isAuth">
         <div>
           <button mat-raised-button>
             <a routerLink="/login">Login</a>
           </button>
         </div>
       </li>
-      <li>
+      <li *ngIf="!isAuth">
         <div>
           <button mat-raised-button>
             <a routerLink="/signup">Sign Up</a>
           </button>
         </div>
       </li>
-      <li>
+      <li *ngIf="isAuth">
         <div>
           <button mat-raised-button>
             <a routerLink="/trainings">Data Training</a>
@@ -39,10 +38,10 @@
         </div>
       </li>
       <span class="example-spacer"></span>
-      <li>
+      <li *ngIf="isAuth">
         <div>
           <button mat-raised-button>
-            <a routerLink="/logout">Logout</a>
+            <a style="cursor: pointer;" (click)="onLogout()">Logout</a>
           </button>
         </div>
       </li>

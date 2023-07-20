@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div class="card-body" align="center">
+  <section class="signup-form">
+    <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <mat-form-field appearance="outline">
+        <mat-label>Your Email</mat-label>
+        <input type="email" matInput ngModel name="email" required #emailInput="ngModel" email>
+        <mat-error *ngIf="emailInput.hasError('required')">Email Tidak Boleh Kosong</mat-error>
+        <mat-error *ngIf="!emailInput.hasError('required')">Email Tidak Valid</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput ngModel name="password" required minlength="6" #pwInput="ngModel" password>
+        <mat-hint align="end">{{pwInput.value?.length}} /6</mat-hint>
+        <mat-error *ngIf="pwInput.hasError('required')">Password Tidak Boleh Kosong</mat-error>
+        <mat-error *ngIf="!pwInput.hasError('required')">Password Kurang dari 6 karakter </mat-error>
+      </mat-form-field>
+
+      <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Submit</button>
+    </form>
+  </section>
+</div>
