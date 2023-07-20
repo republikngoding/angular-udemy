@@ -5,9 +5,10 @@ import { AllProductComponent } from "./all-product/all-product.component";
 import { LoginComponent } from "./auth/login/login.component";
 import { SignupComponent } from "./auth/signup/signup.component";
 import { TrainingsComponent } from "./training/trainings/trainings.component";
+import { WelcomeComponent } from "./welcome/welcome.component";
 
 const routes: Routes = [
-  { path: "", component: HomeComponent },
+  { path: "", component: WelcomeComponent },
   { path: "all-product", component: AllProductComponent },
   { path: "login", component: LoginComponent },
   { path: "signup", component: SignupComponent },
@@ -18,4 +19,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

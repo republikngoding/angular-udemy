@@ -5,7 +5,7 @@
   <p>{{productName}}</p>
 </article> -->
 
-<article *ngIf="productName!=null" class="product">
+<div *ngIf="productName!=null" class="product">
   <div align="right">
     <button type="button" class="btn" (click)="onDelete()">
       <span class="material-icons">
@@ -15,7 +15,7 @@
   </div>
   <p>{{productName}}</p>
   <!-- <p>awesome product gaess</p> -->
-</article>
+</div>
 
 <article *ngIf="NamaHP!=null" class="hp">
   <p>{{NamaHP}}</p>

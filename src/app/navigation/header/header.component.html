@@ -1,0 +1,51 @@
+<mat-toolbar color="primary">
+  <div>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <a routerLink="/" class="text-light">LOGO</a>
+  </div>
+
+  <div fxFlex fxLayout fxFlexAlign="flex-end" fxHide.xs>
+    <ul fxFlex fxLayout fxLayoutGap="10px" class="navigation-items">
+      <li>
+        <div>
+          <button mat-raised-button>
+            <a routerLink="/all-product">All Product</a>
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button mat-raised-button>
+            <a routerLink="/login">Login</a>
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button mat-raised-button>
+            <a routerLink="/signup">Sign Up</a>
+          </button>
+        </div>
+      </li>
+      <li>
+        <div>
+          <button mat-raised-button>
+            <a routerLink="/trainings">Data Training</a>
+          </button>
+        </div>
+      </li>
+      <span class="example-spacer"></span>
+      <li>
+        <div>
+          <button mat-raised-button>
+            <a routerLink="/logout">Logout</a>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>
